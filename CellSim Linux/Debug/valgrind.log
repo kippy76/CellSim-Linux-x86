@@ -1,0 +1,1957 @@
+==15073== Memcheck, a memory error detector
+==15073== Copyright (C) 2002-2010, and GNU GPL'd, by Julian Seward et al.
+==15073== Using Valgrind-3.6.1-Debian and LibVEX; rerun with -h for copyright info
+==15073== Command: /home/kippy/workspace/CellSim/Debug/CellSim
+==15073== Parent PID: 5385
+==15073== 
+--15073-- 
+--15073-- Valgrind options:
+--15073--    --suppressions=/usr/lib/valgrind/debian-libc6-dbg.supp
+--15073--    -v
+--15073--    --tool=memcheck
+--15073--    --leak-check=full
+--15073--    --show-reachable=yes
+--15073--    --track-origins=yes
+--15073--    --log-file=valgrind.log
+--15073-- Contents of /proc/version:
+--15073--   Linux version 3.0.0-24-generic-pae (buildd@akateko) (gcc version 4.6.1 (Ubuntu/Linaro 4.6.1-9ubuntu3) ) #40-Ubuntu SMP Tue Jul 24 15:55:26 UTC 2012
+--15073-- Arch and hwcaps: X86, x86-sse1-sse2
+--15073-- Page sizes: currently 4096, max supported 4096
+--15073-- Valgrind library directory: /usr/lib/valgrind
+--15073-- Reading syms from /lib/i386-linux-gnu/ld-2.13.so (0x4000000)
+--15073--   Considering /lib/i386-linux-gnu/ld-2.13.so ..
+--15073--   .. CRC mismatch (computed a6c8b2f7 wanted 69f2d381)
+--15073--   Considering /usr/lib/debug/lib/i386-linux-gnu/ld-2.13.so ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /home/kippy/workspace/CellSim/Debug/CellSim (0x8048000)
+--15073-- Reading syms from /usr/lib/valgrind/memcheck-x86-linux (0x38000000)
+--15073--    object doesn't have a dynamic symbol table
+--15073-- Reading suppressions file: /usr/lib/valgrind/debian-libc6-dbg.supp
+--15073-- Reading suppressions file: /usr/lib/valgrind/default.supp
+--15073-- REDIR: 0x4016b60 (index) redirected to 0x3803e847 (vgPlain_x86_linux_REDIR_FOR_index)
+--15073-- Reading syms from /usr/lib/valgrind/vgpreload_core-x86-linux.so (0x4022000)
+--15073-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-x86-linux.so (0x4025000)
+==15073== WARNING: new redirection conflicts with existing -- ignoring it
+--15073--     new: 0x04016b60 (index               ) R-> 0x04028c7e index
+--15073-- REDIR: 0x4016d20 (strlen) redirected to 0x4029045 (strlen)
+--15073-- Reading syms from /usr/local/lib/libSDL-1.2.so.0.11.4 (0x404d000)
+--15073-- Reading syms from /usr/lib/libSDL_ttf-2.0.so.0.6.3 (0x40ee000)
+--15073--   Considering /usr/lib/libSDL_ttf-2.0.so.0.6.3 ..
+--15073--   .. CRC mismatch (computed fe1ce8fc wanted bba4c23f)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16 (0x40f4000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16 ..
+--15073--   .. CRC mismatch (computed 0767ea0e wanted b08dd867)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /lib/i386-linux-gnu/libm-2.13.so (0x41df000)
+--15073--   Considering /lib/i386-linux-gnu/libm-2.13.so ..
+--15073--   .. CRC mismatch (computed 6e94624c wanted 22969979)
+--15073--   Considering /usr/lib/debug/lib/i386-linux-gnu/libm-2.13.so ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /lib/i386-linux-gnu/libgcc_s.so.1 (0x4209000)
+--15073--   Considering /lib/i386-linux-gnu/libgcc_s.so.1 ..
+--15073--   .. CRC mismatch (computed b65cdc91 wanted 35537674)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /lib/i386-linux-gnu/libc-2.13.so (0x4227000)
+--15073--   Considering /lib/i386-linux-gnu/libc-2.13.so ..
+--15073--   .. CRC mismatch (computed 5d7f0723 wanted 3f8e3fd1)
+--15073--   Considering /usr/lib/debug/lib/i386-linux-gnu/libc-2.13.so ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /lib/i386-linux-gnu/libpthread-2.13.so (0x43a6000)
+--15073--   Considering /lib/i386-linux-gnu/libpthread-2.13.so ..
+--15073--   .. CRC mismatch (computed 0b26b884 wanted 21b4acb3)
+--15073--   Considering /usr/lib/debug/lib/i386-linux-gnu/libpthread-2.13.so ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /lib/i386-linux-gnu/libdl-2.13.so (0x43c1000)
+--15073--   Considering /lib/i386-linux-gnu/libdl-2.13.so ..
+--15073--   .. CRC mismatch (computed e5b294cf wanted 30262032)
+--15073--   Considering /usr/lib/debug/lib/i386-linux-gnu/libdl-2.13.so ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libfreetype.so.6.6.2 (0x43c6000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libfreetype.so.6.6.2 ..
+--15073--   .. CRC mismatch (computed e0411edf wanted aadd0337)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /lib/i386-linux-gnu/libz.so.1.2.3.4 (0x445d000)
+--15073--   Considering /lib/i386-linux-gnu/libz.so.1.2.3.4 ..
+--15073--   .. CRC mismatch (computed 995eb12f wanted 33a06a21)
+--15073--    object doesn't have a symbol table
+--15073-- REDIR: 0x42a59b0 (strstr) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x42a55f0 (__GI_strstr) redirected to 0x402af6e (strstr)
+--15073-- REDIR: 0x429e990 (rindex) redirected to 0x4028adc (rindex)
+--15073-- REDIR: 0x429b780 (calloc) redirected to 0x4027253 (calloc)
+--15073-- REDIR: 0x429e670 (__GI_strlen) redirected to 0x402902a (__GI_strlen)
+--15073-- REDIR: 0x429e010 (strcmp) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x43476c0 (__strcmp_ssse3) redirected to 0x40299b8 (strcmp)
+--15073-- REDIR: 0x429e620 (strlen) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x42a5010 (__strlen_sse2_bsf) redirected to 0x402900f (strlen)
+--15073-- REDIR: 0x41a39b0 (operator new(unsigned int)) redirected to 0x40283aa (operator new(unsigned int))
+--15073-- REDIR: 0x429fdc0 (memcpy) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x433f480 (__memcpy_ssse3) redirected to 0x4029b53 (memcpy)
+--15073-- REDIR: 0x429a790 (malloc) redirected to 0x40287f1 (malloc)
+--15073-- REDIR: 0x41a3ae0 (operator new[](unsigned int)) redirected to 0x4027ee0 (operator new[](unsigned int))
+--15073-- REDIR: 0x429f3d0 (bcmp) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x434a520 (__memcmp_ssse3) redirected to 0x402a64c (bcmp)
+--15073-- REDIR: 0x429f230 (memchr) redirected to 0x4029b00 (memchr)
+--15073-- REDIR: 0x41a17f0 (operator delete(void*)) redirected to 0x4027894 (operator delete(void*))
+--15073-- REDIR: 0x41a1850 (operator delete[](void*)) redirected to 0x4027516 (operator delete[](void*))
+--15073-- REDIR: 0x429ac40 (free) redirected to 0x4027b7d (free)
+--15073-- REDIR: 0x429f700 (memmove) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x4341370 (__memmove_ssse3) redirected to 0x402aab3 (memmove)
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libX11.so.6.3.0 (0x4875000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libX11.so.6.3.0 ..
+--15073--   .. CRC mismatch (computed d84f718c wanted 1d9ffd31)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libX11.so.6.3.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libxcb.so.1.1.0 (0x49ab000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libxcb.so.1.1.0 ..
+--15073--   .. CRC mismatch (computed ea093d75 wanted 9ccac4bc)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libxcb.so.1.1.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXau.so.6.0.0 (0x49ca000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXau.so.6.0.0 ..
+--15073--   .. CRC mismatch (computed 028146c5 wanted e16b2942)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0 (0x49ce000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0 ..
+--15073--   .. CRC mismatch (computed 79097260 wanted 766e3fcb)
+--15073--    object doesn't have a symbol table
+--15073-- REDIR: 0x429f7c0 (memset) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x429e890 (strncmp) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- REDIR: 0x430db40 (__memcpy_chk) redirected to 0x4022499 (_vgnU_ifunc_wrapper)
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXext.so.6.4.0 (0x49d5000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXext.so.6.4.0 ..
+--15073--   .. CRC mismatch (computed c0607288 wanted e94ddf46)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libXext.so.6.4.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXrender.so.1.3.0 (0x49e8000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXrender.so.1.3.0 ..
+--15073--   .. CRC mismatch (computed ca4b965a wanted ab7c529f)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 (0x49f3000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 ..
+--15073--   .. CRC mismatch (computed 880eb2ac wanted 33053b12)
+--15073--    object doesn't have a symbol table
+--15073-- REDIR: 0x40173e0 (stpcpy) redirected to 0x402a892 (stpcpy)
+--15073-- REDIR: 0x42a4c10 (__GI_strncmp) redirected to 0x40294b2 (__GI_strncmp)
+--15073-- REDIR: 0x429fab0 (stpcpy) redirected to 0x402a702 (stpcpy)
+--15073-- REDIR: 0x42a0f00 (strchrnul) redirected to 0x402ab9f (strchrnul)
+--15073-- REDIR: 0x429ad20 (realloc) redirected to 0x40288a0 (realloc)
+--15073-- REDIR: 0x430dd10 (__strcpy_chk) redirected to 0x402ac06 (__strcpy_chk)
+--15073-- REDIR: 0x4348b30 (__strncmp_ssse3) redirected to 0x4029449 (strncmp)
+--15073-- REDIR: 0x433e370 (__memset_sse2) redirected to 0x402aa22 (memset)
+--15073-- REDIR: 0x429e8e0 (strncpy) redirected to 0x4029217 (strncpy)
+--15073-- Discarding syms at 0x49f4100-0x49f8c18 in /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 due to munmap()
+--15073-- Discarding syms at 0x49e92c0-0x49ef448 in /usr/lib/i386-linux-gnu/libXrender.so.1.3.0 due to munmap()
+--15073-- Discarding syms at 0x49d76f0-0x49e2638 in /usr/lib/i386-linux-gnu/libXext.so.6.4.0 due to munmap()
+--15073-- Discarding syms at 0x4886170-0x4915bf8 in /usr/lib/i386-linux-gnu/libX11.so.6.3.0 due to munmap()
+--15073-- Discarding syms at 0x49b1ad0-0x49c1248 in /usr/lib/i386-linux-gnu/libxcb.so.1.1.0 due to munmap()
+--15073-- Discarding syms at 0x49cecc0-0x49d0948 in /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0 due to munmap()
+--15073-- Discarding syms at 0x49ca9e0-0x49cb828 in /usr/lib/i386-linux-gnu/libXau.so.6.0.0 due to munmap()
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libX11.so.6.3.0 (0x4875000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libX11.so.6.3.0 ..
+--15073--   .. CRC mismatch (computed d84f718c wanted 1d9ffd31)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libX11.so.6.3.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libxcb.so.1.1.0 (0x49ab000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libxcb.so.1.1.0 ..
+--15073--   .. CRC mismatch (computed ea093d75 wanted 9ccac4bc)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libxcb.so.1.1.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXau.so.6.0.0 (0x49ca000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXau.so.6.0.0 ..
+--15073--   .. CRC mismatch (computed 028146c5 wanted e16b2942)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0 (0x49ce000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0 ..
+--15073--   .. CRC mismatch (computed 79097260 wanted 766e3fcb)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXext.so.6.4.0 (0x49d5000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXext.so.6.4.0 ..
+--15073--   .. CRC mismatch (computed c0607288 wanted e94ddf46)
+--15073--   Considering /usr/lib/debug/usr/lib/i386-linux-gnu/libXext.so.6.4.0 ..
+--15073--   .. CRC is valid
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXrender.so.1.3.0 (0x49e8000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXrender.so.1.3.0 ..
+--15073--   .. CRC mismatch (computed ca4b965a wanted ab7c529f)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 (0x49f3000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 ..
+--15073--   .. CRC mismatch (computed 880eb2ac wanted 33053b12)
+--15073--    object doesn't have a symbol table
+--15073-- REDIR: 0x429e0d0 (strcpy) redirected to 0x402907b (strcpy)
+--15073-- REDIR: 0x429dea0 (index) redirected to 0x4028bc7 (index)
+--15073-- REDIR: 0x429e060 (__GI_strcmp) redirected to 0x4029a0a (__GI_strcmp)
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2 (0x4031000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2 ..
+--15073--   .. CRC mismatch (computed 27b8283e wanted cf02d89f)
+--15073--    object doesn't have a symbol table
+--15073-- Reading syms from /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0 (0x403c000)
+--15073--   Considering /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0 ..
+--15073--   .. CRC mismatch (computed 966dfda3 wanted 7165e6b6)
+--15073--    object doesn't have a symbol table
+--15073-- REDIR: 0x4259110 (putenv) redirected to 0x402b0be (putenv)
+--15073-- REDIR: 0x429e730 (strnlen) redirected to 0x4028fc3 (strnlen)
+==15073== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==15073==    at 0x42F2124: writev (writev.c:51)
+==15073==    by 0x40004: ???
+==15073==  Address 0x464a323 is 19 bytes inside a block of size 16,384 alloc'd
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x489C551: XOpenDisplay (OpenDis.c:256)
+==15073==    by 0x408700B: XOpenDisplay (SDL_x11sym.h:78)
+==15073==    by 0x4092823: X11_VideoInit (SDL_x11video.c:617)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073==  Uninitialised value was created by a stack allocation
+==15073==    at 0x48A84A4: XStoreColors (StColors.c:38)
+==15073== 
+==15073== Conditional jump or move depends on uninitialised value(s)
+==15073==    at 0x4089F76: X11_SetKeyboardState (SDL_x11events.c:1351)
+==15073==    by 0x408A57D: X11_DispatchEvent (SDL_x11events.c:514)
+==15073==    by 0x6D: ???
+==15073==  Uninitialised value was created by a heap allocation
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48AFF33: _XEnq (XlibInt.c:877)
+==15073==    by 0x48AC9CB: handle_response (xcb_io.c:338)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+--15073-- Discarding syms at 0x49f4100-0x49f8c18 in /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0 due to munmap()
+--15073-- Discarding syms at 0x49d76f0-0x49e2638 in /usr/lib/i386-linux-gnu/libXext.so.6.4.0 due to munmap()
+==15073== Conditional jump or move depends on uninitialised value(s)
+==15073==    at 0x42590C4: getenv (getenv.c:90)
+==15073==    by 0x42FCC64: write_gmon (gmon.c:351)
+==15073==    by 0x42FD438: _mcleanup (gmon.c:430)
+==15073==    by 0x4259980: __run_exit_handlers (exit.c:78)
+==15073==    by 0x4259A0C: exit (exit.c:100)
+==15073==    by 0x424011A: (below main) (libc-start.c:258)
+==15073==  Uninitialised value was created by a stack allocation
+==15073==    at 0x42FCC51: write_gmon (gmon.c:343)
+==15073== 
+==15073== 
+==15073== Process terminating with default action of signal 27 (SIGPROF)
+==15073==    at 0x42E8F23: __open_nocancel (syscall-template.S:82)
+==15073==    by 0x42FD438: _mcleanup (gmon.c:430)
+==15073==    by 0x4259980: __run_exit_handlers (exit.c:78)
+==15073==    by 0x4259A0C: exit (exit.c:100)
+==15073==    by 0x424011A: (below main) (libc-start.c:258)
+==15073== 
+==15073== HEAP SUMMARY:
+==15073==     in use at exit: 103,632 bytes in 537 blocks
+==15073==   total heap usage: 1,698,084 allocs, 1,697,547 frees, 72,703,154 bytes allocated
+==15073== 
+==15073== Searching for pointers to 537 not-freed blocks
+==15073== Checked 449,872 bytes
+==15073== 
+==15073== 1 bytes in 1 blocks are definitely lost in loss record 1 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48CAC10: _XlcDefaultMapModifiers (lcWrap.c:147)
+==15073==    by 0x48CB04A: XSetLocaleModifiers (lcWrap.c:86)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 2 bytes in 1 blocks are still reachable in loss record 2 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48C302F: _XlcCreateLC (lcPubWrap.c:81)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 2 bytes in 1 blocks are still reachable in loss record 3 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x429E370: strdup (strdup.c:43)
+==15073==    by 0x48BF7A8: _XlcResolveLocaleName (lcFile.c:579)
+==15073==    by 0x48C324A: initialize (lcPublic.c:229)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 4 bytes in 1 blocks are still reachable in loss record 4 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48D602C: _XimOpenIM (imInt.c:51)
+==15073==    by 0x48BB04A: XOpenIM (IMWrap.c:121)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 7 bytes in 1 blocks are still reachable in loss record 5 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x429E370: strdup (strdup.c:43)
+==15073== 
+==15073== 8 bytes in 1 blocks are still reachable in loss record 6 of 135
+==15073==    at 0x402896C: realloc (vg_replace_malloc.c:525)
+==15073==    by 0x48C07B6: add_codeset.isra.10 (lcGeneric.c:186)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073== 
+==15073== 8 bytes in 2 blocks are still reachable in loss record 7 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48C12A4: load_generic (lcGeneric.c:162)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 8 bytes in 2 blocks are indirectly lost in loss record 8 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48C12A4: load_generic (lcGeneric.c:162)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073== 
+==15073== 11 bytes in 1 blocks are still reachable in loss record 9 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCD90: _XlcCreateDefaultCharSet (lcCharSet.c:187)
+==15073==    by 0x473A522C: ???
+==15073== 
+==15073== 12 bytes in 1 blocks are still reachable in loss record 10 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48C0375: create (lcGeneric.c:63)
+==15073==    by 0x48C2FCF: _XlcCreateLC (lcPubWrap.c:76)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 12 bytes in 1 blocks are still reachable in loss record 11 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48CAE4D: _XOpenLC (lcWrap.c:296)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4889ACB: _XNoticeCreateBitmap (CrGlCur.c:192)
+==15073==    by 0x488A153: XCreatePixmap (CrPixmap.c:61)
+==15073== 
+==15073== 12 bytes in 1 blocks are definitely lost in loss record 12 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x49E206A: ???
+==15073==    by 0x49E1AE4: ???
+==15073==    by 0x49E1E8A: ???
+==15073==    by 0x49E2365: ???
+==15073==    by 0x49DC8AD: ???
+==15073==    by 0x49DCBAB: ???
+==15073==    by 0x4087FFB: XShmQueryExtension (SDL_x11sym.h:159)
+==15073==    by 0x4092AEF: X11_VideoInit (SDL_x11video.c:641)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 16 bytes in 2 blocks are definitely lost in loss record 13 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x429E370: strdup (strdup.c:43)
+==15073==    by 0x6D6952: ???
+==15073== 
+==15073== 20 bytes in 1 blocks are still reachable in loss record 14 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x43C23AD: _dlerror_run (dlerror.c:142)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 20 bytes in 1 blocks are still reachable in loss record 15 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BEC53: _XlcCreateLocaleDataBase (lcDB.c:1316)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 28 bytes in 1 blocks are still reachable in loss record 16 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400CDCE: _dl_map_object_deps (dl-deps.c:470)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 17 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48A1FCA: _XrmInternalStringToQuark (Quarks.c:193)
+==15073==    by 0x48A2184: XrmStringToQuark (Quarks.c:363)
+==15073==    by 0x48BCB1A: _XlcGetCharSet (lcCharSet.c:52)
+==15073==    by 0x48BC6E0: _XlcAddCT (lcCT.c:467)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 18 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48BCA7B: _XlcInitCTInfo (lcCT.c:1287)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 19 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48BCAA1: _XlcInitCTInfo (lcCT.c:1290)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 20 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48BCAC7: _XlcInitCTInfo (lcCT.c:1294)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 21 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48BCAED: _XlcInitCTInfo (lcCT.c:1297)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 22 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E201E: _XlcDefaultLoader (lcDefConv.c:773)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 23 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2046: _XlcDefaultLoader (lcDefConv.c:774)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 24 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2072: _XlcDefaultLoader (lcDefConv.c:775)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 25 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2094: _XlcDefaultLoader (lcDefConv.c:776)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 26 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20B2: _XlcDefaultLoader (lcDefConv.c:778)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 27 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20D4: _XlcDefaultLoader (lcDefConv.c:779)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 28 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20F6: _XlcDefaultLoader (lcDefConv.c:780)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 29 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2118: _XlcDefaultLoader (lcDefConv.c:782)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 30 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2138: _XlcDefaultLoader (lcDefConv.c:783)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 31 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E215A: _XlcDefaultLoader (lcDefConv.c:785)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 32 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E217C: _XlcDefaultLoader (lcDefConv.c:786)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 33 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA44B: _XlcAddUtf8Converters (lcUTF8.c:1134)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 34 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA46F: _XlcAddUtf8Converters (lcUTF8.c:1135)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 35 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA48D: _XlcAddUtf8Converters (lcUTF8.c:1136)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 36 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4B5: _XlcAddUtf8Converters (lcUTF8.c:1137)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 37 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4D7: _XlcAddUtf8Converters (lcUTF8.c:1138)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 38 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4FB: _XlcAddUtf8Converters (lcUTF8.c:1139)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 39 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA519: _XlcAddUtf8Converters (lcUTF8.c:1140)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 40 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA579: _XlcAddUtf8LocaleConverters (lcUTF8.c:2333)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 41 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA59B: _XlcAddUtf8LocaleConverters (lcUTF8.c:2335)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 42 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA5C7: _XlcAddUtf8LocaleConverters (lcUTF8.c:2336)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 43 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA5ED: _XlcAddUtf8LocaleConverters (lcUTF8.c:2338)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 44 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA60B: _XlcAddUtf8LocaleConverters (lcUTF8.c:2343)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 45 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA629: _XlcAddUtf8LocaleConverters (lcUTF8.c:2344)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 46 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA651: _XlcAddUtf8LocaleConverters (lcUTF8.c:2345)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 47 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA673: _XlcAddUtf8LocaleConverters (lcUTF8.c:2347)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 48 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA69B: _XlcAddUtf8LocaleConverters (lcUTF8.c:2348)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 49 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA6C1: _XlcAddUtf8LocaleConverters (lcUTF8.c:2349)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 50 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA6E3: _XlcAddUtf8LocaleConverters (lcUTF8.c:2351)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 51 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA705: _XlcAddUtf8LocaleConverters (lcUTF8.c:2352)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 52 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA727: _XlcAddUtf8LocaleConverters (lcUTF8.c:2353)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 53 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA749: _XlcAddUtf8LocaleConverters (lcUTF8.c:2354)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 54 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA767: _XlcAddUtf8LocaleConverters (lcUTF8.c:2357)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 55 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA789: _XlcAddUtf8LocaleConverters (lcUTF8.c:2358)
+==15073==    by 0x48E61EF: _XlcUtf8Loader (lcUTF8Load.c:57)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 56 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA44B: _XlcAddUtf8Converters (lcUTF8.c:1134)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 57 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA46F: _XlcAddUtf8Converters (lcUTF8.c:1135)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 58 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA48D: _XlcAddUtf8Converters (lcUTF8.c:1136)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 59 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4B5: _XlcAddUtf8Converters (lcUTF8.c:1137)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 60 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4D7: _XlcAddUtf8Converters (lcUTF8.c:1138)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 61 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4FB: _XlcAddUtf8Converters (lcUTF8.c:1139)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 62 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA519: _XlcAddUtf8Converters (lcUTF8.c:1140)
+==15073==    by 0x48E61D9: _XlcUtf8Loader (lcUTF8Load.c:67)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 63 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E201E: _XlcDefaultLoader (lcDefConv.c:773)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 64 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2046: _XlcDefaultLoader (lcDefConv.c:774)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 65 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2072: _XlcDefaultLoader (lcDefConv.c:775)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 66 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2094: _XlcDefaultLoader (lcDefConv.c:776)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 67 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20B2: _XlcDefaultLoader (lcDefConv.c:778)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 68 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20D4: _XlcDefaultLoader (lcDefConv.c:779)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 69 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E20F6: _XlcDefaultLoader (lcDefConv.c:780)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 70 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2118: _XlcDefaultLoader (lcDefConv.c:782)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 71 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E2138: _XlcDefaultLoader (lcDefConv.c:783)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 72 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E215A: _XlcDefaultLoader (lcDefConv.c:785)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 73 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48E217C: _XlcDefaultLoader (lcDefConv.c:786)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 74 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA44B: _XlcAddUtf8Converters (lcUTF8.c:1134)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 75 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA46F: _XlcAddUtf8Converters (lcUTF8.c:1135)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 76 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA48D: _XlcAddUtf8Converters (lcUTF8.c:1136)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 77 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4B5: _XlcAddUtf8Converters (lcUTF8.c:1137)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 78 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4D7: _XlcAddUtf8Converters (lcUTF8.c:1138)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 79 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA4FB: _XlcAddUtf8Converters (lcUTF8.c:1139)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 32 bytes in 1 blocks are still reachable in loss record 80 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD267: _XlcSetConverter (lcConv.c:104)
+==15073==    by 0x48CA519: _XlcAddUtf8Converters (lcUTF8.c:1140)
+==15073==    by 0x48E2184: _XlcDefaultLoader (lcDefConv.c:788)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 38 bytes in 2 blocks are still reachable in loss record 81 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCD90: _XlcCreateDefaultCharSet (lcCharSet.c:187)
+==15073==    by 0x2E313035: ???
+==15073== 
+==15073== 39 bytes in 1 blocks are still reachable in loss record 82 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x4004FCE: local_strdup (dl-load.c:162)
+==15073==    by 0x400808F: _dl_map_object (dl-load.c:2165)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 39 bytes in 1 blocks are still reachable in loss record 83 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400AABA: _dl_new_object (dl-object.c:164)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 40 bytes in 1 blocks are still reachable in loss record 84 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x4004FCE: local_strdup (dl-load.c:162)
+==15073==    by 0x400808F: _dl_map_object (dl-load.c:2165)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 40 bytes in 1 blocks are still reachable in loss record 85 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400AABA: _dl_new_object (dl-object.c:164)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 40 bytes in 2 blocks are still reachable in loss record 86 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCD90: _XlcCreateDefaultCharSet (lcCharSet.c:187)
+==15073==    by 0x3830322F: ???
+==15073== 
+==15073== 40 bytes in 5 blocks are still reachable in loss record 87 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCC1B: _XlcAddCharSet (lcCharSet.c:95)
+==15073==    by 0x48C1234: load_generic (lcGeneric.c:845)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 40 bytes in 3 blocks are indirectly lost in loss record 88 of 135
+==15073==    at 0x402896C: realloc (vg_replace_malloc.c:525)
+==15073==    by 0x48C115C: load_generic (lcGeneric.c:159)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073== 
+==15073== 47 bytes in 5 blocks are still reachable in loss record 89 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BC8F0: _XlcAddCT (lcCT.c:517)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 48 bytes in 1 blocks are still reachable in loss record 90 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BCD49: _XlcCreateDefaultCharSet (lcCharSet.c:179)
+==15073==    by 0x473A522C: ???
+==15073== 
+==15073== 56 bytes in 14 blocks are indirectly lost in loss record 91 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48C12A4: load_generic (lcGeneric.c:162)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073== 
+==15073== 64 bytes in 1 blocks are still reachable in loss record 92 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48B3E23: PutEntry (Xrm.c:995)
+==15073==    by 0x48B4568: GetDatabase (Xrm.c:1511)
+==15073==    by 0x48B52C4: XrmGetStringDatabase (Xrm.c:1559)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4889ACB: _XNoticeCreateBitmap (CrGlCur.c:192)
+==15073==    by 0x488A153: XCreatePixmap (CrPixmap.c:61)
+==15073==    by 0x408663B: XCreatePixmap (SDL_x11sym.h:38)
+==15073== 
+==15073== 69 bytes in 5 blocks are still reachable in loss record 93 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCDFB: _XlcCreateDefaultCharSet (lcCharSet.c:199)
+==15073==    by 0x48C1216: load_generic (lcGeneric.c:841)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 76 bytes in 2 blocks are still reachable in loss record 94 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x4004FCE: local_strdup (dl-load.c:162)
+==15073==    by 0x400808F: _dl_map_object (dl-load.c:2165)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 76 bytes in 2 blocks are still reachable in loss record 95 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400AABA: _dl_new_object (dl-object.c:164)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 76 bytes in 3 blocks are still reachable in loss record 96 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400CDCE: _dl_map_object_deps (dl-deps.c:470)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 84 bytes in 1 blocks are still reachable in loss record 97 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400CEEF: _dl_map_object_deps (dl-deps.c:505)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 84 bytes in 1 blocks are still reachable in loss record 98 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48C03A2: create (lcGeneric.c:71)
+==15073==    by 0x48C2FCF: _XlcCreateLC (lcPubWrap.c:76)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 96 bytes in 1 blocks are still reachable in loss record 99 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48C038F: create (lcGeneric.c:67)
+==15073==    by 0x48C2FCF: _XlcCreateLC (lcPubWrap.c:76)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073==    by 0x4034C20: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073== 
+==15073== 96 bytes in 2 blocks are still reachable in loss record 100 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BCD49: _XlcCreateDefaultCharSet (lcCharSet.c:179)
+==15073==    by 0x3830322F: ???
+==15073== 
+==15073== 96 bytes in 2 blocks are still reachable in loss record 101 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BCD49: _XlcCreateDefaultCharSet (lcCharSet.c:179)
+==15073==    by 0x2E313035: ???
+==15073== 
+==15073== 96 bytes in 2 blocks are still reachable in loss record 102 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48C0787: add_codeset.isra.10 (lcGeneric.c:181)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CB0BA: _XrmInitParseInfo (lcWrap.c:369)
+==15073==    by 0x48B16AD: NewDatabase (Xrm.c:502)
+==15073==    by 0x48B5294: XrmGetStringDatabase (Xrm.c:1557)
+==15073==    by 0x48904DA: InitDefaults (GetDflt.c:171)
+==15073==    by 0x48906F6: XGetDefault (GetDflt.c:243)
+==15073== 
+==15073== 96 bytes in 2 blocks are indirectly lost in loss record 103 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48C0787: add_codeset.isra.10 (lcGeneric.c:181)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 110 bytes in 3 blocks are still reachable in loss record 104 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x4004FCE: local_strdup (dl-load.c:162)
+==15073==    by 0x400808F: _dl_map_object (dl-load.c:2165)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 110 bytes in 3 blocks are still reachable in loss record 105 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400AABA: _dl_new_object (dl-object.c:164)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 112 (8 direct, 104 indirect) bytes in 1 blocks are definitely lost in loss record 106 of 135
+==15073==    at 0x402896C: realloc (vg_replace_malloc.c:525)
+==15073==    by 0x48C07B6: add_codeset.isra.10 (lcGeneric.c:186)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E1FD9: _XlcDefaultLoader (lcDefConv.c:764)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 124 bytes in 1 blocks are definitely lost in loss record 107 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x49B5747: get_peer_sock_name (xcb_auth.c:259)
+==15073==    by 0x49B5802: _xcb_get_auth_info (xcb_auth.c:302)
+==15073==    by 0x49B529F: xcb_connect_to_display_with_auth_info (xcb_util.c:424)
+==15073==    by 0x49B545A: xcb_connect (xcb_util.c:395)
+==15073==    by 0x48AC407: _XConnectXCB (xcb_disp.c:78)
+==15073==    by 0x489C19F: XOpenDisplay (OpenDis.c:129)
+==15073==    by 0x408700B: XOpenDisplay (SDL_x11sym.h:78)
+==15073==    by 0x409017B: X11_Available (SDL_x11video.c:78)
+==15073==    by 0x407CA74: SDL_VideoInit (SDL_video.c:193)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 124 bytes in 1 blocks are definitely lost in loss record 108 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x49B5747: get_peer_sock_name (xcb_auth.c:259)
+==15073==    by 0x49B5802: _xcb_get_auth_info (xcb_auth.c:302)
+==15073==    by 0x49B529F: xcb_connect_to_display_with_auth_info (xcb_util.c:424)
+==15073==    by 0x49B545A: xcb_connect (xcb_util.c:395)
+==15073==    by 0x48AC407: _XConnectXCB (xcb_disp.c:78)
+==15073==    by 0x489C19F: XOpenDisplay (OpenDis.c:129)
+==15073==    by 0x408700B: XOpenDisplay (SDL_x11sym.h:78)
+==15073==    by 0x40927FF: X11_VideoInit (SDL_x11video.c:590)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 124 bytes in 1 blocks are definitely lost in loss record 109 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x49B5747: get_peer_sock_name (xcb_auth.c:259)
+==15073==    by 0x49B5802: _xcb_get_auth_info (xcb_auth.c:302)
+==15073==    by 0x49B529F: xcb_connect_to_display_with_auth_info (xcb_util.c:424)
+==15073==    by 0x49B545A: xcb_connect (xcb_util.c:395)
+==15073==    by 0x48AC407: _XConnectXCB (xcb_disp.c:78)
+==15073==    by 0x489C19F: XOpenDisplay (OpenDis.c:129)
+==15073==    by 0x408700B: XOpenDisplay (SDL_x11sym.h:78)
+==15073==    by 0x4092823: X11_VideoInit (SDL_x11video.c:617)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 128 bytes in 2 blocks are still reachable in loss record 110 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x400CEEF: _dl_map_object_deps (dl-deps.c:505)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 142 bytes in 18 blocks are still reachable in loss record 111 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD889: append_value_list (lcDB.c:504)
+==15073==    by 0x48BE721: store_to_database (lcDB.c:585)
+==15073==    by 0x48BE850: f_newline (lcDB.c:689)
+==15073==    by 0x48BECC4: _XlcCreateLocaleDataBase (lcDB.c:1126)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 144 bytes in 18 blocks are still reachable in loss record 112 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BD85B: append_value_list (lcDB.c:488)
+==15073==    by 0x48BE721: store_to_database (lcDB.c:585)
+==15073==    by 0x48BE850: f_newline (lcDB.c:689)
+==15073==    by 0x48BECC4: _XlcCreateLocaleDataBase (lcDB.c:1126)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 160 bytes in 5 blocks are still reachable in loss record 113 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x40133EC: _dl_close_worker (dl-close.c:374)
+==15073==    by 0x4013B97: _dl_close (dl-close.c:754)
+==15073==    by 0x43C1CF1: dlclose_doit (dlclose.c:37)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C2339: _dlerror_run (dlerror.c:164)
+==15073==    by 0x43C1D27: dlclose (dlclose.c:48)
+==15073==    by 0x805403D: View::~View() (View.cpp:55)
+==15073==    by 0x804C11F: Controller::~Controller() (Controller.cpp:37)
+==15073==    by 0x804C193: Controller::~Controller() (Controller.cpp:41)
+==15073==    by 0x804AA32: main (CellSim.cpp:43)
+==15073== 
+==15073== 192 bytes in 2 blocks are still reachable in loss record 114 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400FD8C: _dl_check_map_versions (dl-version.c:300)
+==15073==    by 0x4012878: dl_open_worker (dl-open.c:269)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 216 bytes in 18 blocks are still reachable in loss record 115 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x429E370: strdup (strdup.c:43)
+==15073==    by 0x48BE527: store_to_database (lcDB.c:599)
+==15073==    by 0x48BE850: f_newline (lcDB.c:689)
+==15073==    by 0x48BECC4: _XlcCreateLocaleDataBase (lcDB.c:1126)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 274 bytes in 18 blocks are still reachable in loss record 116 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x429E370: strdup (strdup.c:43)
+==15073==    by 0x48BE69A: store_to_database (lcDB.c:607)
+==15073==    by 0x48BE850: f_newline (lcDB.c:689)
+==15073==    by 0x48BECC4: _XlcCreateLocaleDataBase (lcDB.c:1126)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 304 bytes in 1 blocks are still reachable in loss record 117 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BEBF4: _XlcCreateLocaleDataBase (lcDB.c:1307)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 360 bytes in 18 blocks are still reachable in loss record 118 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BE50D: store_to_database (lcDB.c:594)
+==15073==    by 0x48BE850: f_newline (lcDB.c:689)
+==15073==    by 0x48BECC4: _XlcCreateLocaleDataBase (lcDB.c:1126)
+==15073==    by 0x48C32AB: initialize (lcPublic.c:112)
+==15073==    by 0xBE801CD7: ???
+==15073== 
+==15073== 400 bytes in 50 blocks are still reachable in loss record 119 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCC1B: _XlcAddCharSet (lcCharSet.c:95)
+==15073==    by 0x48BC9AE: _XlcAddCT (lcCT.c:476)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073== 
+==15073== 576 bytes in 5 blocks are still reachable in loss record 120 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400FD8C: _dl_check_map_versions (dl-version.c:300)
+==15073==    by 0x4012878: dl_open_worker (dl-open.c:269)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 631 bytes in 1 blocks are still reachable in loss record 121 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400A86F: _dl_new_object (dl-object.c:77)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 632 bytes in 1 blocks are still reachable in loss record 122 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400A86F: _dl_new_object (dl-object.c:77)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073== 
+==15073== 633 bytes in 49 blocks are still reachable in loss record 123 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCDFB: _XlcCreateDefaultCharSet (lcCharSet.c:199)
+==15073==    by 0x48BC99A: _XlcAddCT (lcCT.c:473)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073== 
+==15073== 816 bytes in 17 blocks are indirectly lost in loss record 124 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48C0787: add_codeset.isra.10 (lcGeneric.c:181)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 980 (68 direct, 912 indirect) bytes in 1 blocks are definitely lost in loss record 125 of 135
+==15073==    at 0x402896C: realloc (vg_replace_malloc.c:525)
+==15073==    by 0x48C07B6: add_codeset.isra.10 (lcGeneric.c:186)
+==15073==    by 0x48C0CB2: load_generic (lcGeneric.c:742)
+==15073==    by 0x48C275F: initialize (lcGeneric.c:1013)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073== 
+==15073== 1,028 bytes in 50 blocks are still reachable in loss record 126 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BCD90: _XlcCreateDefaultCharSet (lcCharSet.c:187)
+==15073==    by 0x48BC99A: _XlcAddCT (lcCT.c:473)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073== 
+==15073== 1,260 bytes in 2 blocks are still reachable in loss record 127 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400A86F: _dl_new_object (dl-object.c:77)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x40124CF: dl_open_worker (dl-open.c:226)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 1,631 bytes in 50 blocks are still reachable in loss record 128 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BC717: _XlcAddCT (lcCT.c:481)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073== 
+==15073== 1,886 bytes in 3 blocks are still reachable in loss record 129 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x400A86F: _dl_new_object (dl-object.c:77)
+==15073==    by 0x4005F87: _dl_map_object_from_fd (dl-load.c:967)
+==15073==    by 0x4007E73: _dl_map_object (dl-load.c:2260)
+==15073==    by 0x400CB57: openaux (dl-deps.c:65)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x4012529: dl_open_worker (dl-open.c:263)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x43C1BE8: dlopen_doit (dlopen.c:67)
+==15073==    by 0x400E61E: _dl_catch_error (dl-error.c:178)
+==15073==    by 0x1: ???
+==15073== 
+==15073== 2,048 bytes in 1 blocks are still reachable in loss record 130 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48A1E2B: _XrmInternalStringToQuark (Quarks.c:213)
+==15073==    by 0x48A2184: XrmStringToQuark (Quarks.c:363)
+==15073==    by 0x48BCB1A: _XlcGetCharSet (lcCharSet.c:52)
+==15073==    by 0x48BC6E0: _XlcAddCT (lcCT.c:467)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073== 
+==15073== 2,048 bytes in 1 blocks are still reachable in loss record 131 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48BEAF7: _XlcCreateLocaleDataBase (lcDB.c:168)
+==15073== 
+==15073== 2,400 bytes in 50 blocks are still reachable in loss record 132 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x48BCD49: _XlcCreateDefaultCharSet (lcCharSet.c:179)
+==15073==    by 0x48BC99A: _XlcAddCT (lcCT.c:473)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073==    by 0x48CAFA1: _XlcCurrentLC (lcWrap.c:355)
+==15073==    by 0x40929FB: X11_VideoInit (SDL_x11video.c:704)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073== 
+==15073== 8,176 bytes in 1 blocks are still reachable in loss record 133 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48A1BD3: permalloc (Quarks.c:123)
+==15073==    by 0x48A1FE6: _XrmInternalStringToQuark (Quarks.c:205)
+==15073==    by 0x48A2184: XrmStringToQuark (Quarks.c:363)
+==15073==    by 0x48BCB1A: _XlcGetCharSet (lcCharSet.c:52)
+==15073==    by 0x48BC6E0: _XlcAddCT (lcCT.c:467)
+==15073==    by 0x48BCA0E: _XlcInitCTInfo (lcCT.c:1276)
+==15073==    by 0x48C313C: initialize (lcPublic.c:209)
+==15073==    by 0x48C2752: initialize (lcGeneric.c:1004)
+==15073==    by 0x48C2FEA: _XlcCreateLC (lcPubWrap.c:90)
+==15073==    by 0x48E6187: _XlcUtf8Loader (lcUTF8Load.c:47)
+==15073==    by 0x48CAE3B: _XOpenLC (lcWrap.c:294)
+==15073== 
+==15073== 8,176 bytes in 1 blocks are still reachable in loss record 134 of 135
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48A1BD3: permalloc (Quarks.c:123)
+==15073==    by 0x48A20E2: _XrmInternalStringToQuark (Quarks.c:322)
+==15073==    by 0x48A2184: XrmStringToQuark (Quarks.c:363)
+==15073==    by 0x489066F: XGetDefault (GetDflt.c:249)
+==15073==    by 0x4034BD3: _XcursorGetDisplayInfo (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4034C7A: XcursorSupportsARGB (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4037861: XcursorNoticeCreateBitmap (in /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2)
+==15073==    by 0x4889ACB: _XNoticeCreateBitmap (CrGlCur.c:192)
+==15073==    by 0x488A153: XCreatePixmap (CrPixmap.c:61)
+==15073==    by 0x408663B: XCreatePixmap (SDL_x11sym.h:38)
+==15073==    by 0x408F4F8: X11_CreateWMCursor (SDL_x11mouse.c:104)
+==15073== 
+==15073== 65,008 bytes in 1 blocks are still reachable in loss record 135 of 135
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x42FD2D4: monstartup (gmon.c:136)
+==15073==    by 0x400E798: call_init (dl-init.c:70)
+==15073==    by 0xBE803845: ???
+==15073==    by 0x454B5F44: ???
+==15073== 
+==15073== LEAK SUMMARY:
+==15073==    definitely lost: 477 bytes in 9 blocks
+==15073==    indirectly lost: 1,016 bytes in 38 blocks
+==15073==      possibly lost: 0 bytes in 0 blocks
+==15073==    still reachable: 102,139 bytes in 490 blocks
+==15073==         suppressed: 0 bytes in 0 blocks
+==15073== 
+==15073== ERROR SUMMARY: 130 errors from 11 contexts (suppressed: 105 from 13)
+==15073== 
+==15073== 1 errors in context 1 of 11:
+==15073== Conditional jump or move depends on uninitialised value(s)
+==15073==    at 0x42590C4: getenv (getenv.c:90)
+==15073==    by 0x42FCC64: write_gmon (gmon.c:351)
+==15073==    by 0x42FD438: _mcleanup (gmon.c:430)
+==15073==    by 0x4259980: __run_exit_handlers (exit.c:78)
+==15073==    by 0x4259A0C: exit (exit.c:100)
+==15073==    by 0x424011A: (below main) (libc-start.c:258)
+==15073==  Uninitialised value was created by a stack allocation
+==15073==    at 0x42FCC51: write_gmon (gmon.c:343)
+==15073== 
+==15073== 
+==15073== 2 errors in context 2 of 11:
+==15073== Conditional jump or move depends on uninitialised value(s)
+==15073==    at 0x4089F76: X11_SetKeyboardState (SDL_x11events.c:1351)
+==15073==    by 0x408A57D: X11_DispatchEvent (SDL_x11events.c:514)
+==15073==    by 0x6D: ???
+==15073==  Uninitialised value was created by a heap allocation
+==15073==    at 0x4028876: malloc (vg_replace_malloc.c:236)
+==15073==    by 0x48AFF33: _XEnq (XlibInt.c:877)
+==15073==    by 0x48AC9CB: handle_response (xcb_io.c:338)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073== 
+==15073== 
+==15073== 119 errors in context 3 of 11:
+==15073== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==15073==    at 0x42F2124: writev (writev.c:51)
+==15073==    by 0x40004: ???
+==15073==  Address 0x464a323 is 19 bytes inside a block of size 16,384 alloc'd
+==15073==    at 0x402732C: calloc (vg_replace_malloc.c:467)
+==15073==    by 0x489C551: XOpenDisplay (OpenDis.c:256)
+==15073==    by 0x408700B: XOpenDisplay (SDL_x11sym.h:78)
+==15073==    by 0x4092823: X11_VideoInit (SDL_x11video.c:617)
+==15073==    by 0x407C9A8: SDL_VideoInit (SDL_video.c:246)
+==15073==    by 0x40523E1: SDL_InitSubSystem (SDL.c:89)
+==15073==    by 0x8053E26: View::View(int, int, bool, Model*, int) (View.cpp:31)
+==15073==    by 0x804C899: Controller::runSimulation() (Controller.cpp:95)
+==15073==    by 0x804AA1A: main (CellSim.cpp:42)
+==15073==  Uninitialised value was created by a stack allocation
+==15073==    at 0x48A84A4: XStoreColors (StColors.c:38)
+==15073== 
+--15073-- 
+--15073-- used_suppression:    105 dl-hack3-cond-1
+==15073== 
+==15073== ERROR SUMMARY: 130 errors from 11 contexts (suppressed: 105 from 13)
